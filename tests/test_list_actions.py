@@ -1,6 +1,6 @@
 import inspect
 from GLOBALS import *
-from base_test import BaseTest
+from tests.base_test import BaseTest
 from pages.page_tasks import TaskListPage
 from pages.page_new_list import NewListPage
 from pages.drawer_menu import MenuDrawerPage
@@ -14,10 +14,7 @@ logger = Logger().get_logger()
 class TestListActionsSuite(BaseTest):
 
     def test_default_list_tabs(self):
-        """
-        VERIFY 'Default List' & 'New list' IN SCROLL MENU
-        VERIFY 'Default List' IS ACTIVE/SELECTED
-        """
+        """VERIFY 'Default List' & 'New list' IN SCROLL MENU"""
         info(logger, f"\nStarting Test: {inspect.stack()[0][3]}")
         tasks = TaskListPage(self.driver)
         expect(tasks.verify_list_in_menu(DEFAULT_LIST_NAMES))

@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 pytest = "*"
 delayed-assert = "*"
+appium-python-client = "*"
 
 [requires]
 python_version = "3.7"

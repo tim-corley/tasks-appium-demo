@@ -1,5 +1,6 @@
+import inspect
 from GLOBALS import *
-from base_test import BlankListStartTest, SampleListStartTest
+from tests.base_test import BlankListStartTest, SampleListStartTest
 from pages.page_tasks import TaskListPage
 from pages.drawer_new_task import NewTaskDrawerPage
 from pages.page_task_details import TaskDetailsPage
@@ -14,6 +15,7 @@ class TestTaskCreateSuite(BlankListStartTest):
 
     def test_create_new_task(self):
         """VERIFY NEW TASK ADDED TO LIST W/ TITLE"""
+        info(logger, f"\nStarting Test: {inspect.stack()[0][3]}")
         new_task = NewTaskDrawerPage(self.driver)
         new_task.prompt_add_new_task_drawer()
         new_task.create_new_task(TASK_NAME_01)
@@ -22,6 +24,7 @@ class TestTaskCreateSuite(BlankListStartTest):
 
     def test_create_task_details(self):
         """VERIFY NEW TASK ADDED TO LIST W/ TITLE & DESCRIPTION"""
+        info(logger, f"\nStarting Test: {inspect.stack()[0][3]}")
         new_task = NewTaskDrawerPage(self.driver)
         new_task.prompt_add_new_task_drawer()
         new_task.create_new_task(TASK_NAME_01, TASK_DETAIL_01)
@@ -34,6 +37,7 @@ class TestTaskCreateSuite(BlankListStartTest):
 
     def test_task_discard(self):
         """VERIFY ADD TASK DRAWER DISMISSED WHEN TAPPING ABOVE IT"""
+        info(logger, f"\nStarting Test: {inspect.stack()[0][3]}")
         new_task = NewTaskDrawerPage(self.driver)
         new_task.prompt_add_new_task_drawer()
         new_task.input_task_title(TASK_NAME_01)
@@ -49,6 +53,7 @@ class TestTaskDetailsSuite(SampleListStartTest):
 
     def test_task_marked_complete(self):
         """VERIFY MARKING TASK AS COMPLETE MOVES IT TO 'COMPLETED' SECTION"""
+        info(logger, f"\nStarting Test: {inspect.stack()[0][3]}")
         tasks = TaskListPage(self.driver)
         tasks.click_custom_list(LIST_NAME_03)
         tasks.select_item_status_radio_btn()
@@ -61,6 +66,7 @@ class TestTaskDetailsSuite(SampleListStartTest):
 
     def test_task_marked_uncompleted(self):
         """VERIFY MARKING TASK AS UNCOMPLETED MOVES IT OUT OF 'COMPLETED' SECTION"""
+        info(logger, f"\nStarting Test: {inspect.stack()[0][3]}")
         tasks = TaskListPage(self.driver)
         tasks.click_custom_list(LIST_NAME_03)
         tasks.select_item_status_radio_btn()
@@ -80,6 +86,7 @@ class TestTaskDetailsSuite(SampleListStartTest):
 
     def test_tasks_deleted(self):
         """VERIFY USERS CAN DELETE A TASK"""
+        info(logger, f"\nStarting Test: {inspect.stack()[0][3]}")
         tasks = TaskListPage(self.driver)
         all_tasks = tasks.get_all_list_items()
         expect(all_tasks["incomplete_count"] == 3)
