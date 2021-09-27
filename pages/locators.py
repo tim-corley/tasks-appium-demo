@@ -55,7 +55,7 @@ class MenuDrawer:
     CREATE_NEW_LIST = UiWrapper(MobileBy.ACCESSIBILITY_ID, 'Create new list')
 
 
-class AddTaskDrawer:
+class NewTaskDrawer:
     NEW_TASK_INPUT = UiWrapper(MobileBy.ACCESSIBILITY_ID, 'New task title')
     TASK_DETAILS_INPUT = UiWrapper(MobileBy.ACCESSIBILITY_ID, 'Task details')
     REPEAT_TAG = UiWrapper(MobileBy.XPATH, '//XCUIElementTypeButton[@name="Repeating"][2]')
@@ -88,11 +88,13 @@ class RepeatSelection:
 
 
 class ConfirmDeleteDialog:
-    WRAPPER = UiWrapper(MobileBy.XPATH, '//XCUIElementTypeApplication[@name="Tasks"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]')
+    WRAPPER = UiWrapper(MobileBy.XPATH, '//XCUIElementTypeApplication[@name="Tasks"]/XCUIElementTypeWindow['
+                                        '1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]')
 
 
 class ConfirmTaskDiscardDialog:
-    WRAPPER = UiWrapper(MobileBy.XPATH, '//XCUIElementTypeApplication[@name="Tasks"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[3]/XCUIElementTypeOther[3]')
+    WRAPPER = UiWrapper(MobileBy.XPATH, '//XCUIElementTypeApplication[@name="Tasks"]/XCUIElementTypeWindow['
+                                        '1]/XCUIElementTypeOther[3]/XCUIElementTypeOther[3]')
 
 
 class TaskDetails:
