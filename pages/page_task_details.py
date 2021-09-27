@@ -20,7 +20,7 @@ class TaskDetailsPage(BasePage):
         try:
             return self.task_title.get_text()
         except AssertionError:
-            error(logger, 'unable to locate task description text')
+            error(logger, 'unable to locate task title text')
             pass
 
     def get_task_description(self):

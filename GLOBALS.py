@@ -8,3 +8,5 @@ LIST_NAME_03 = 'My List'
 TASK_NAME_01 = 'Item Alpha'
 TASK_DETAIL_01 = 'Aenean pharetra magna ac placerat'
 SAMPLE_TASKS = ['Item One', 'Item Bravo', 'Task Three']
+JUNK_01 = "&%^*(!@#$)^$%#@!55(^&!Fz)!"
+JUNK_02 = "BbMm##@@45!&"

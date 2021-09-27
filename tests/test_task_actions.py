@@ -35,6 +35,19 @@ class TestTaskCreateSuite(BlankListStartTest):
         expect(TASK_DETAIL_01 in task_detail.get_task_description())
         task_detail.select_back_nav_chevron()
 
+    def test_handle_junk_inputs(self):
+        """VERIFY ADDING TASK WORKS WITH UNUSUAL DATA"""
+        info(logger, f"\nStarting Test: {inspect.stack()[0][3]}")
+        new_task = NewTaskDrawerPage(self.driver)
+        new_task.prompt_add_new_task_drawer()
+        new_task.create_new_task(JUNK_01, JUNK_02*3)
+        task_list = TaskListPage(self.driver)
+        task_list.select_task(JUNK_01)
+        task_detail = TaskDetailsPage(self.driver)
+        expect(JUNK_01 in task_detail.get_task_title())
+        expect(JUNK_02 in task_detail.get_task_description())
+        task_detail.select_back_nav_chevron()
+
     def test_task_discard(self):
         """VERIFY ADD TASK DRAWER DISMISSED WHEN TAPPING ABOVE IT"""
         info(logger, f"\nStarting Test: {inspect.stack()[0][3]}")
